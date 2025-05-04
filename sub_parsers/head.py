@@ -12,7 +12,7 @@ class HeadParser:
         parser.consume(source_file, "LBRACE")
 
         self.code = HeadBlockParser(parser, source_file).html()
-        
+
     def html(self):
         return self.code
 

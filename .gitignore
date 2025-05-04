@@ -1,3 +1,9 @@
+# Python-generated files
 __pycache__/
-utils/__pycache__/
-sub_parsers/__pycache__/
+*.py[oc]
+out/
+build/
+dist/
+wheels/
+*.egg-info
+

@@ -11,11 +11,11 @@ class ParagraphParser:
         if self.value.type == "STRING":
             parser.consume(source_file, "RPAREN")
         else:
-            self.value.value = ''
+            self.value.value = ""
         parser.consume(source_file, "SEMICOLON")
-    
+
     def html(self):
         return f"<p>{self.value.value}</p>"
-        
+
     def __repr__(self):
         return f"<p>{self.value.value}</p>"

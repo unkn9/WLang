@@ -11,7 +11,7 @@ class FooterParser:
         parser.consume(source_file, "RPAREN")
         parser.consume(source_file, "LBRACE")
         self.code = BlockParser(parser, source_file).html()
-        
+
     def html(self):
         return self.code
 

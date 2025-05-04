@@ -48,10 +48,12 @@ reserved = {
     "!=": "NEQ",
 }
 
+
 def peek(pos: int, code: str):
     if pos + 1 < len(code):
         return code[pos + 1]
     return None
+
 
 def tokenize(code: str, source_file: str, parser: Parser):
     pos = 0
@@ -84,10 +86,10 @@ def tokenize(code: str, source_file: str, parser: Parser):
             word = ""
             continue
 
-        if quoted and char == '\n':
-            raise Exception(f"Error: String not closed")
-        
-        if not quoted and char in ('\n', ' '):
+        if quoted and char == "\n":
+            raise Exception("Error: String not closed")
+
+        if not quoted and char in ("\n", " "):
             pos += 1
             continue
 
@@ -103,11 +105,11 @@ def tokenize(code: str, source_file: str, parser: Parser):
                 pos += 1
             tokens.append(Token("DIGIT", int(digits)))
             continue
-        
+
         if char in reserved:
             p = peek(pos, code)
-            if p and char+p in reserved:
-                tokens.append(Token(reserved[char+p], char+p))
+            if p and char + p in reserved:
+                tokens.append(Token(reserved[char + p], char + p))
                 pos += 2
             else:
                 tokens.append(Token(reserved[char], char))

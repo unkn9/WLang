@@ -8,7 +8,10 @@ class HeadBlockParser:
         self.source_file = source_file
         self.ast = []
 
-        while parser.current_token(source_file) and parser.current_token(source_file).type != "RBRACE":
+        while (
+            parser.current_token(source_file)
+            and parser.current_token(source_file).type != "RBRACE"
+        ):
             if parser.current_token(source_file).type == "IDENTIFIER":
                 identifier = parser.consume(source_file, "IDENTIFIER")
                 assert identifier.value == "page"
@@ -20,11 +23,13 @@ class HeadBlockParser:
                     LanguageParser(parser, source_file)
                     continue
 
-            raise Exception(f"Unregistered token: '{parser.current_token(source_file).value}' of type {parser.current_token(source_file).type}") 
+            raise Exception(
+                f"Unregistered token: '{parser.current_token(source_file).value}' of type {parser.current_token(source_file).type}"
+            )
         parser.consume(source_file, "RBRACE")
 
     def html(self):
-        return '\n'.join(self.ast)
+        return "\n".join(self.ast)
 
     def __repr__(self):
         return f"<h{self.level}>{self.value.value}</h{self.level}>"

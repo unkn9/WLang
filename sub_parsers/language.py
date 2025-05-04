@@ -11,6 +11,6 @@ class LanguageParser:
         parser.consume(source_file, "RPAREN")
         parser.consume(source_file, "SEMICOLON")
         parser.language = self.value.value
-        
+
     def __repr__(self):
         return ""

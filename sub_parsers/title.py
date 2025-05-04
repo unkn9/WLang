@@ -10,9 +10,9 @@ class TitleParser:
         self.value = parser.consume(source_file, "STRING")
         parser.consume(source_file, "RPAREN")
         parser.consume(source_file, "SEMICOLON")
-    
+
     def html(self):
         return f"<title>{self.value.value}</title>"
-        
+
     def __repr__(self):
         return ""

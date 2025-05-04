@@ -14,7 +14,7 @@ class UrlParser:
         parser.consume(source_file, "SEMICOLON")
 
     def html(self):
-        return f"<a href=\"{self.url.value}\">{self.text.value}</a>"
-        
+        return f'<a href="{self.url.value}">{self.text.value}</a>'
+
     def __repr__(self):
-        return f"<a href=\"{self.url.value}\">{self.text.value}</a>"
+        return f'<a href="{self.url.value}">{self.text.value}</a>'
