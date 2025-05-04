@@ -18,7 +18,7 @@ You get it, if you want to become a web developer you have to learn at least 3 o
 
 But here is WLang (as a prototype for the moment). THE language that will centralize all those sintaxis in only one to simplify the web development but with the same features.
 ## Installation guide
-1. Download the installer from [here](https://github.com/Zen-kun04/WLang/releases/tag/Prototype)
+1. Download the installer from [here](https://github.com/Zen-kun04/WLang/releases/tag/Release)
 2. Open the installer. This will installer the compiler
 
 ## Code example
