@@ -13,7 +13,7 @@ class BlockParser:
         
         while parser.current_token(source_file) and parser.current_token(source_file).type != "RBRACE":
             if parser.current_token(source_file).type == "N_FUNC":
-                if parser.current_token(source_file).value == "paragraph":
+                if parser.current_token(source_file).value in ("paragraph", "p"):
                     self.ast.append(ParagraphParser(parser, source_file).html())
                     continue
 
